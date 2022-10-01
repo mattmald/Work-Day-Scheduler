@@ -13,8 +13,19 @@ hours.forEach((hour,i) => {
             </div>
             <textarea class = "${rowHour<currentHour ? 'past' : rowHour > currentHour ? 'future' : 'present'}"></textarea>
             <div class="saveBtn">
-                <i class="far fa-save"></i></i>
+                <i class="far fa-save"></i>
             </div>
         </div>
     `;
-});cd 
+
+}); 
+
+ var button = document.querySelector(".saveBtn")
+ 
+ function saveText(event) {
+    event.currentTarget.setAttribute(
+        console.log("hello")
+    );
+ }
+
+ button.addEventListener('click', saveText);

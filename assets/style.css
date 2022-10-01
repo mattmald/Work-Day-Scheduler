@@ -72,6 +72,8 @@ body {
 
   .saveBtn i {
     margin: auto;
+   display: flex;
+   justify-content: center;
   }
   
   .saveBtn i:hover {
