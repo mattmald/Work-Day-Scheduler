@@ -1,5 +1,8 @@
 $('#currentDay').html(moment().format('llll'));
 
+let store = localStorage.times ? JSON.parse(localStorage.times) : [];
+renderMessage();
+
 const hours = ['9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm'];
 
 hours.forEach((hour,i) => {
@@ -12,20 +15,32 @@ hours.forEach((hour,i) => {
                 ${hour}
             </div>
             <textarea class = "${rowHour<currentHour ? 'past' : rowHour > currentHour ? 'future' : 'present'}"></textarea>
-            <div class="saveBtn">
+            <div class="saveBtn" data-hour = "${rowHour}">
                 <i class="far fa-save"></i>
             </div>
-        </div>
-    `;
-
+        </div>`;
 }); 
 
- var button = document.querySelector(".saveBtn")
+ var button = $(".saveBtn").on('click', saveText)
  
- function saveText(event) {
-    event.currentTarget.setAttribute(
-        console.log("hello")
-    );
+ function saveText() {
+    store = [];
+    for (let i = 0; i < $('textarea').length; i++) {
+        store.push($('textarea').eq(i).val());   
+    }
+    localStorage.times = JSON.stringify(store);
+    renderMessage();
  }
 
- button.addEventListener('click', saveText);
+ function renderMessage() {
+    store.forEach((val,i) => {
+        $('textarea').eq(i).text(val)
+    });
+  }
+
+  function init() {
+    renderMessage();
+  }
+  init();
+  
+  
