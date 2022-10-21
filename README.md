@@ -8,5 +8,6 @@ Install my-project by simply clicking on the links provided
 
     
 ## Screenshots
-![](Assets/images/Screenshot%20(21).jpg)
-![](Assets/images/Screenshot%20(22).jpg)
+![](assets/images/Screenshot%202022-10-21%20153117.png)
+![](assets/images/Screenshot%202022-10-21%20153135.png)
+![](assets/images/Screenshot%202022-10-21%20153208.png)
